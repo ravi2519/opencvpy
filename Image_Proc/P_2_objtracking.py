@@ -3,7 +3,7 @@ import cv2 as cv
 
 
 ##########
-# Now we know how to convert BGR image to HSV, we can use this to extract a colored object. 
+# Now we know how to convert BGR image to HSV( Hint: cvtColor ), we can use this to extract a colored object. 
 # In HSV, it is more easier to represent a color than in BGR color-space. 
 # In our application, we will try to extract a blue colored object.
 # Following steps will be taken to do that:
@@ -26,6 +26,7 @@ while(1):
     hsv = cv.cvtColor( frame, cv.COLOR_BGR2HSV )
 
     # define range of blue color in HSV
+    # how we reached these values is demonstrated in P_4 
     lower_blue = np.array([110, 50, 50])
     upper_blue = np.array([130, 255, 255])
 

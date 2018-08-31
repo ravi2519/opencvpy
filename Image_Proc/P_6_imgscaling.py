@@ -10,6 +10,9 @@ img = cv.imread( "cars.jpg" )
 # Different interpolation methods are used. Preferable interpolation methods are cv.INTER_AREA for 
 # shrinking and cv.INTER_CUBIC (slow) & cv.INTER_LINEAR for zooming. By default, interpolation 
 # method used is cv.INTER_LINEAR for all resizing purposes. You can resize an input image either of following methods
+#
+# First method resize args:
+#   src image, dest image (output), scale factor along horizontal axis, scale factor along vertical axis, interpolation.
 
 
 res = cv.resize( img, None, fx = 2, fy = 2, interpolation = cv.INTER_CUBIC )
@@ -17,6 +20,8 @@ res = cv.resize( img, None, fx = 2, fy = 2, interpolation = cv.INTER_CUBIC )
 cv.imshow( "First Method", res )
 
 # OR
+# Second Method resize args:
+#   src image, dest width and height tuple, interpolation
 
 height, width = img.shape[:2]
 res = cv.resize( img, ( 2*width, 2*height ), interpolation = cv.INTER_CUBIC )

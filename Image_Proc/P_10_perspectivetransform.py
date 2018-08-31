@@ -18,11 +18,12 @@ print( "Rows=" + str(rows) + "; cols=" + str(cols) )
 # Then apply cv.warpPerspective with this 3x3 transformation matrix.
 
 
-pts1 = np.float32([[637,88],[1500,158],[540,2480],[1400,2545]])
-pts2 = np.float32([[0,0],[800,0],[0,2400],[800,2400]])
+pts1 = np.float32([[637,88],[1500,158],[540,2480],[1400,2545]]) # points on the source image that form document boundary
+pts2 = np.float32([[0,0],[800,0],[0,2400],[800,2400]]) # points on the dest image
 
-M = cv.getPerspectiveTransform(pts1, pts2)
+M = cv.getPerspectiveTransform(pts1, pts2) # M is the transform matrix
 
+# args are source image, tranform matrix and dest image size
 dst = cv.warpPerspective( img, M, ( 800, 2400 ) )
 
 plt.subplot(121),plt.imshow(img),plt.title("Input")

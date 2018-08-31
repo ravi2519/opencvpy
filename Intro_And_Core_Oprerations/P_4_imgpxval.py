@@ -13,6 +13,7 @@ print ( px )
 
 #########
 # accessing only blue pixels
+# img[ x, y, 0/1/2 ], where 0 is for Blue
 blue = img[100, 100, 0]
 print ( blue )
 
